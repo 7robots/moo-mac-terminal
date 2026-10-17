@@ -1,3 +1,5 @@
+<p align="center"><strong>⭐ If Moo is useful to you, please <a href="https://github.com/ventz/moo-mac-terminal">star the repo</a>.</strong></p>
+
 <p align="center">
   <img src="docs/moo-icon.png" alt="Moo Terminal" width="160">
 </p>
@@ -13,6 +15,7 @@
 <p align="center">
   <a href="LICENSE"><img src="https://img.shields.io/badge/License-MIT-blue.svg" alt="License: MIT"></a>
   <a href="#quick-install"><img src="https://img.shields.io/badge/platform-macOS%2015.5%2B-lightgrey.svg" alt="Platform: macOS"></a>
+  <a href="https://github.com/ventz/moo-mac-terminal/stargazers"><img src="https://img.shields.io/github/stars/ventz/moo-mac-terminal?style=social" alt="GitHub stars"></a>
 </p>
 
 ## Table of Contents
