@@ -1,4 +1,4 @@
-<p align="center"><strong>⭐ If Moo is useful to you, please <a href="https://github.com/ventz/moo-mac-terminal">star the repo</a>.</strong></p>
+<p align="center"><strong>⭐ If Moo is useful to you, please star it: click the ☆ Star button at the top right of the <a href="https://github.com/ventz/moo-mac-terminal">GitHub repo page</a>.</strong></p>
 
 <p align="center">
   <img src="docs/moo-icon.png" alt="Moo Terminal" width="160">
