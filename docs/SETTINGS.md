@@ -397,7 +397,7 @@ profile. The full list is in [SHORTCUTS.md](SHORTCUTS.md).
 | Setting | Options | Default | What it does |
 |---|---|---|---|
 | **Declare terminal as:** | `xterm-256color` · `xterm-color` · `xterm` · `vt100` · `xterm-ghostty` · any value | **`xterm-256color`** | The `TERM` variable. Programs use it to decide which features to use. |
-| **TERM_PROGRAM:** · **TERM_VERSION:** | Text | `ghostty` · `1.3.1` | Shown only for `xterm-ghostty`. Some programs, such as Claude Code, pick features by these. With any other `TERM`, Moo leaves both unset. |
+| **TERM_PROGRAM:** · **TERM_VERSION:** | Text | `ghostty` · `1.3.1` | Shown only for `xterm-ghostty`. Some programs, such as Claude Code, pick features by these. With any other `TERM`, the shell gets Moo's own `TERM_PROGRAM=moo` and `TERM_PROGRAM_VERSION` instead. |
 | **Bell:** | None · Sound · Visual · Sound and Visual | **Sound** | What happens when a program rings the bell (`printf '\a'`). |
 
 ### Environment
