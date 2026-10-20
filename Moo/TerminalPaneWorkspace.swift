@@ -146,19 +146,33 @@ final class TerminalPaneWorkspace {
         revision += 1
     }
 
-    func split(_ controller: TerminalSessionController, orientation: TerminalPaneSplit) {
-        guard let node = findNode(for: controller, in: root) else { return }
+    /// Splits a pane, putting the new one right of it (vertical) or below it
+    /// (horizontal). The new pane starts in `directory`, or in the split
+    /// pane's directory when nil. A script can leave the focus where it was,
+    /// so a pane opened beside the one you are typing in does not take over
+    /// your keystrokes.
+    @discardableResult
+    func split(
+        _ controller: TerminalSessionController,
+        orientation: TerminalPaneSplit,
+        directory: String? = nil,
+        focusesNewPane: Bool = true
+    ) -> TerminalSessionController? {
+        guard let node = findNode(for: controller, in: root) else { return nil }
         zoomedControllerID = nil
 
         let newController = TerminalSessionController(startsProcess: startsProcesses)
-        newController.prepareForSplit(from: controller)
+        newController.prepareForSplit(from: controller, directory: directory)
         newController.workspace = self
 
         let existingNode = TerminalPaneNode(content: .terminal(controller))
         let newNode = TerminalPaneNode(content: .terminal(newController))
         node.content = .split(orientation, existingNode, newNode)
-        focusedControllerID = newController.id
+        if focusesNewPane {
+            focusedControllerID = newController.id
+        }
         revision += 1
+        return newController
     }
 
     func selectPreviousSplit() {

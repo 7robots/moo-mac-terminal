@@ -186,6 +186,11 @@ and rejected, and the traps in measuring terminals are in
 - **Splits and zoom.** Split with ⌘D and ⇧⌘D; ⇧⌘↩ zooms one pane to fill the
   tab and back, keeping the dividers where you left them. Right-click a pane
   for its split, zoom, theme, clear, reset and font commands.
+- **Scriptable splits.** AppleScript's `split pane` opens a pane beside or
+  below any pane, by its `MOO_SURFACE_ID`, optionally running a command and
+  leaving the focus where it was. It returns the new pane's ID, so a script
+  or an agent can put a viewer next to the shell it runs in:
+  `osascript -e 'tell application "Moo" to split pane (system attribute "MOO_SURFACE_ID") running "htop" focusing false'`.
 - **Open from Finder.** Right-click a folder or file, then Services → New Moo
   Tab Here, New Moo Window Here or New Moo Workspace Here.
 - **Settings you can find.** Settings are grouped into app-wide pages and

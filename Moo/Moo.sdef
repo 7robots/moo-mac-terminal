@@ -18,5 +18,26 @@
             <cocoa class="OpenURLScriptCommand"/>
             <direct-parameter type="text" description="The http or https address."/>
         </command>
+        <command name="split pane" code="TcltSpPn" description="Split a terminal pane and return the new pane's ID, the MOO_SURFACE_ID its shell sees.">
+            <cocoa class="SplitPaneScriptCommand"/>
+            <direct-parameter type="text" optional="yes" description="The ID (MOO_SURFACE_ID) of the pane to split. Defaults to the focused pane of the current project."/>
+            <parameter name="direction" code="SpDr" type="split direction" optional="yes" description="Where the new pane goes. Defaults to right.">
+                <cocoa key="direction"/>
+            </parameter>
+            <parameter name="in directory" code="SpWd" type="text" optional="yes" description="The new pane's working directory. Defaults to the split pane's.">
+                <cocoa key="directory"/>
+            </parameter>
+            <parameter name="running" code="SpCm" type="text" optional="yes" description="A one-line command typed into the new pane's shell when it starts. The shell stays open after it exits.">
+                <cocoa key="command"/>
+            </parameter>
+            <parameter name="focusing" code="SpFc" type="boolean" optional="yes" description="Whether the new pane takes the focus. Defaults to true.">
+                <cocoa key="focus"/>
+            </parameter>
+            <result type="text" description="The new pane's ID."/>
+        </command>
+        <enumeration name="split direction" code="SpDE">
+            <enumerator name="right" code="SpRt" description="Beside the pane."/>
+            <enumerator name="down" code="SpDn" description="Below the pane."/>
+        </enumeration>
     </suite>
 </dictionary>

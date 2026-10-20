@@ -142,12 +142,12 @@ final class TerminalSessionController: NSObject, LocalProcessTerminalViewDelegat
     }
 
     @MainActor
-    func prepareForSplit(from source: TerminalSessionController) {
+    func prepareForSplit(from source: TerminalSessionController, directory: String? = nil) {
         guard !didResolveLaunch else { return }
         didResolveLaunch = true
         profile = source.profile
         themeOverride = source.themeOverride
-        launchDirectory = source.currentWorkingDirectory
+        launchDirectory = directory ?? source.currentWorkingDirectory
     }
 
     /// A pane from the last run. A directory that is gone, not the user's,
